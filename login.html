@@ -37,11 +37,21 @@
     e.preventDefault();
     const email = document.getElementById('loginEmail').value;
     const pw = document.getElementById('loginPassword').value;
+    
     if(email === 'admin@techx.com' && pw === 'admin123') {
       localStorage.setItem('techx_loggedIn', JSON.stringify({name:'Admin',email:'admin@techx.com',role:'admin'}));
       window.location.href = 'dashboard.html';
+      return;
+    }
+    
+    let users = JSON.parse(localStorage.getItem('techx_users') || '[]');
+    const user = users.find(u => u.email === email && u.password === pw);
+    
+    if(user) {
+      localStorage.setItem('techx_loggedIn', JSON.stringify({name:user.name, email:user.email, role:user.role}));
+      window.location.href = 'index.html';
     } else {
-      alert('Invalid credentials. Use admin@techx.com / admin123');
+      alert('Invalid email or password');
     }
   });
 </script>
