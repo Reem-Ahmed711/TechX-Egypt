@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechX Egypt — Login</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="auth-page">
+<div class="auth-bg"></div>
+<div class="auth-card">
+  <div class="auth-logo">
+    <div class="logo-mark"><i class="fas fa-bolt"></i></div>
+  </div>
+  <h1 class="auth-title">Welcome Back</h1>
+  <p style="text-align:center; color:#64748b; margin-bottom:32px;">Sign in to your account</p>
+  <form id="loginForm">
+    <div class="input-group">
+      <label><i class="fas fa-envelope"></i> Email Address</label>
+      <input type="email" id="loginEmail" placeholder="admin@techx.com" required/>
+    </div>
+    <div class="input-group">
+      <label><i class="fas fa-lock"></i> Password</label>
+      <input type="password" id="loginPassword" placeholder="••••••" required/>
+    </div>
+    <button type="submit" class="btn-auth"><i class="fas fa-arrow-right"></i> Sign In</button>
+  </form>
+  <div class="auth-footer">
+    Don't have an account? <a href="signup.html">Create one</a><br/>
+    <span style="font-size:0.7rem;">Demo: admin@techx.com / admin123</span>
+  </div>
+</div>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const pw = document.getElementById('loginPassword').value;
+    if(email === 'admin@techx.com' && pw === 'admin123') {
+      localStorage.setItem('techx_loggedIn', JSON.stringify({name:'Admin',email:'admin@techx.com',role:'admin'}));
+      window.location.href = 'dashboard.html';
+    } else {
+      alert('Invalid credentials. Use admin@techx.com / admin123');
+    }
+  });
+</script>
+</body>
+</html>

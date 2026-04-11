@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechX Egypt — Home</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark"><i class="fas fa-bolt"></i></div>
+      <span>TechX Egypt</span>
+    </a>
+    <div class="nav-search">
+      <input type="text" id="searchInput" placeholder="Search for products..."/>
+      <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nl active">Home</a>
+      <a href="#shop" class="nl">Shop</a>
+      <a href="#categories" class="nl">Categories</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartToggle">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <div class="nav-user" id="navUser"></div>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#categories">Categories</a>
+    <a href="login.html" id="mobileAuthLink">Login / Signup</a>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-eyebrow"><i class="fas fa-bolt"></i> Flash Sale — Up to 40% Off</div>
+    <h1 class="hero-title">Best Tech Deals<br><span class="hero-accent">in Egypt</span></h1>
+    <p class="hero-sub">Mobiles, Laptops & Accessories — delivered to your door, at unbeatable prices.</p>
+    <div class="hero-actions">
+      <a href="#shop" class="btn btn-primary">Shop Now</a>
+      <a href="#categories" class="btn btn-outline">Browse Categories</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&q=80" alt="Tech Products"/>
+  </div>
+</section>
+
+<section class="categories-section" id="categories">
+  <div class="container">
+    <div class="section-head">
+      <span class="sec-label">Shop by Type</span>
+      <h2>Browse Categories</h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card" data-filter="mobiles">
+        <div class="cat-icon"><i class="fas fa-mobile-screen-button"></i></div>
+        <h3>Mobiles</h3>
+        <p>Smartphones & Tablets</p>
+      </div>
+      <div class="cat-card" data-filter="laptops">
+        <div class="cat-icon"><i class="fas fa-laptop"></i></div>
+        <h3>Laptops</h3>
+        <p>Work, Game & Create</p>
+      </div>
+      <div class="cat-card" data-filter="accessories">
+        <div class="cat-icon"><i class="fas fa-headphones"></i></div>
+        <h3>Accessories</h3>
+        <p>Audio, Wearables & More</p>
+      </div>
+      <div class="cat-card" data-filter="gaming">
+        <div class="cat-icon"><i class="fas fa-gamepad"></i></div>
+        <h3>Gaming</h3>
+        <p>Controllers & Gear</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-section" id="shop">
+  <div class="container">
+    <div class="shop-header">
+      <div class="section-head">
+        <span class="sec-label">Our Products</span>
+        <h2>All Products</h2>
+      </div>
+      <div class="shop-controls">
+        <div class="filter-tabs">
+          <button class="ftab active" data-cat="all">All</button>
+          <button class="ftab" data-cat="mobiles">Mobiles</button>
+          <button class="ftab" data-cat="laptops">Laptops</button>
+          <button class="ftab" data-cat="accessories">Accessories</button>
+          <button class="ftab" data-cat="gaming">Gaming</button>
+        </div>
+        <select class="sort-select" id="sortSelect">
+          <option value="default">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+    <div class="no-products hidden" id="noProducts">
+      <i class="fas fa-magnifying-glass"></i>
+      <h3>No products found</h3>
+      <button class="btn btn-primary" id="clearSearch">Clear Search</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark"><i class="fas fa-bolt"></i></div>
+        <h3>TechX Egypt</h3>
+        <p>Egypt's #1 destination for premium electronics.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="footer-links">
+        <h4>Support</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 TechX Egypt. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-panel" id="cartPanel">
+  <div class="cp-header">
+    <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+    <button class="cp-close" id="cartClose"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cp-body" id="cartBody"></div>
+  <div class="cp-footer" id="cartFooter"></div>
+</aside>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="prod-modal">
+    <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+    <div class="pm-gallery"><img id="pmImage" src="" alt="Product"/></div>
+    <div class="pm-details">
+      <div class="pm-cat" id="pmCat"></div>
+      <h2 id="pmName"></h2>
+      <div class="pm-stars" id="pmStars"></div>
+      <div class="pm-price" id="pmPrice"></div>
+      <div class="pm-specs" id="pmSpecs"></div>
+      <p class="pm-desc" id="pmDesc"></p>
+      <button class="btn btn-primary btn-full" id="pmAddCart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-stack" id="toastStack"></div>
+<script src="script.js"></script>
+</body>
+</html>
